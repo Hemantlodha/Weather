@@ -25,7 +25,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="https://github.com/Hemantlodha/Weather">Code Link</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,12 +38,9 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">Disabled</a>
-              </li>
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" id="city" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
@@ -51,89 +48,15 @@
       </nav>
       <div class="page-content content-module">
 		
-		
-
-
-
-
-        <div class="current-weather-card card-module content-module ">
-          <div class="card-header spaced-content">
-            <h1>Current Weather</h1>
-            <p class="sub">21:20</p>
-          </div>
-        
-          <div class="card-content">
-            <div class="current-weather">
-              <div class="current-weather-info">
-                <svg class="icon" data-src="/images/weathericons/35.svg" viewBox="0 0 288 288" width="62" height="62"><g stroke-width="8.792" fill="none" fill-rule="evenodd"><path d="M136.323 121.88a100.498 100.498 0 0 1 16.398-80.978 103.839 103.839 0 0 0-86.782 121.731M93.943 216.003a104.718 104.718 0 0 0 163.672-17.98 102.564 102.564 0 0 1-61.943-5.496" stroke="#686763" stroke-linejoin="bevel"></path><path d="M159.095 135.596h-5.407c-12.979-16.162-34.666-22.506-54.309-15.886-19.643 6.62-33.066 24.796-33.615 45.517h-7.87a25.41 25.41 0 1 0 0 50.776h101.114a40.225 40.225 0 1 0 0-80.407h.087Z" stroke="#BABABA"></path></g></svg>
-                <div class="temp">
-                  <div class="display-temp">29°<span class="sub">C</span>
-                  </div>
-                </div>
-              </div>
-              <div class="phrase">Partly cloudy</div>
-            </div>
-            <div class="current-weather-extra no-realfeel-phrase">
-              <div>
-                RealFeel® 36°
-                
-        <div class="label-tooltip" data-js="prevent-accordion-toggle">
-              <div class="label-tooltip-content__subtitle spaced-content">
-                <div>Hot</div>
-                <div class="label-tooltip-content__reference">32° to 37°</div>
-        </div>
-              </div>     
-            </div>
-          </div>
-        
-          <div class="content-module"><div class="glacier-ad unrendered top " data-ad-type="top" data-viewport="mobile" id="top"><div id="google_ads_iframe_/6581/mweb/in/top/weather/current_0__container__" style="border: 0pt none; margin: auto; text-align: center; width: 320px; height: 0px;"></div></div>
-        </div>
-        
-          <div class="current-weather-details no-realfeel-phrase ">
-              <div class="detail-item spaced-content">
-                <div>RealFeel®</div>
-                <div>36°</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Wind</div>
-                <div>N 10 km/h</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Wind Gusts</div>
-                <div>22 km/h</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Humidity</div>
-                <div>86%</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Indoor Humidity</div>
-                <div>86% (Dangerously Humid)</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Dew Point</div>
-                <div>26° C</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Pressure</div>
-                <div>↓ 1000 mb</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Cloud Cover</div>
-                <div>50%</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Visibility</div>
-                <div>8 km</div>
-              </div>
-              <div class="detail-item spaced-content">
-                <div>Cloud Ceiling</div>
-                <div>12200 m</div>
-              </div>
-          </div>
-        </div>
+		    <h1>Current Weather</h1>
+        <p id="time"></p>
+        <div id="temperature">29°C<span class="sub"></span> </div>
+        <div><span id="mint">36°C</span> to <span id="maxt">36°C</span></div>   
+        <div>RealFeel® <span id="realfeel">36°C</span></div>
+        <div>Wind <span id="speed">N </span><span id="winds">18 km/h</span></div>
+        <div>Humidity <span id="humid">80%</span></div>
         <div class="sunrise-sunset  card-module content-module">
-          <h2 class="title module-title">
+          <h2>
             Sunrise/Sunset
           </h2>
           <div class="content">
@@ -150,14 +73,12 @@
                 </div>
               </div>
               <div class="spaced-content">
-                <span class="text-label">
-                  Rise
-                </span>
-                <span class="text-value">05:35</span>
+                <span> Rise</span>
+                <span id="rise">05:35</span>
               </div>
               <div class="spaced-content">
-                <span class="text-label">Set</span>
-                <span class="text-value">19:14</span>
+                <span>Set</span>
+                <span id="set">19:14</span>
               </div>
             </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
