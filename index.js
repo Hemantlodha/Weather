@@ -5,13 +5,15 @@ const options = {
 		'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
 	}
 };
-const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Guna';
+const getWeather=(city)=>{
+cityname.innerHTML=city
+const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city;
 fetch(url, options)
 .then(response => response.json())
 .then((response) => {console.log(response)
 temperature.innerHTML=response.temp+"°C"; 
 realfeel.innerHTML=response.feels_like+"°C";
-winds.innerHTML=3.6*response.wind_speed+" Km/h";
+winds.innerHTML=(3.6*response.wind_speed).toFixed(2)+" Km/h";
 let x=response.wind_degrees;
 if (x>=330 && x<=20) {
 speed.innerHTML="N ";
@@ -40,9 +42,19 @@ else{
 humid.innerHTML=response.humidity+"%";
 maxt.innerHTML=response.max_temp+"°C";
 mint.innerHTML=response.min_temp+"°C";
+rise.innerHTML=Math.floor(((response.sunrise+330*60)%(60*60*24))/3600)+":"+Math.floor(((response.sunrise+330*60)%(60*60))/60);
+set.innerHTML=Math.floor(((response.sunset+330*60)%(60*60*24))/3600)+":"+Math.floor(((response.sunset+330*60)%(60*60))/60);
 }
 )
 .catch(err => console.error(err));
-var datetime = new Date();
-console.log(datetime);
-document.getElementById("time").textContent = datetime;
+}
+setInterval(()=>{
+	var datetime = new Date();
+	// console.log(datetime);
+	document.getElementById("time").textContent = datetime;
+},1000)
+
+submit.addEventListener("click",(e)=>{
+getWeather(city.value)
+})
+getWeather("Delhi")

@@ -7,14 +7,15 @@
     <link href="webcss.png"rel="icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
-        .back{
-        background-color: black;
+        body{
+          background-image: url(yuriy-kovalev-nN1HSDtKdlw-unsplash.jpg);
+          background-size:cover;
         }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+        <div class="container-fluid ">
           <a class="navbar-brand" href="#">GetTemp</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,26 +33,25 @@
                   Dropdown
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Cities</a></li>
                   <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Links are not clickable</a></li>
                 </ul>
               </li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" id="city" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
             </form>
           </div>
         </div>
       </nav>
       <div class="page-content content-module">
-		
-		    <h1>Current Weather</h1>
+		    <h1>Current Weather <span id="cityname"></span></h1>
         <p id="time"></p>
-        <div id="temperature">29°C<span class="sub"></span> </div>
-        <div><span id="mint">36°C</span> to <span id="maxt">36°C</span></div>   
+        <div> Temaperature : <span id="temperature">29°C</span> </div>
+        <div> Temp range : <span id="mint">36°C</span> to <span id="maxt">36°C</span></div>   
         <div>RealFeel® <span id="realfeel">36°C</span></div>
         <div>Wind <span id="speed">N </span><span id="winds">18 km/h</span></div>
         <div>Humidity <span id="humid">80%</span></div>
@@ -59,18 +59,8 @@
           <h2>
             Sunrise/Sunset
           </h2>
-          <div class="content">
-            <div class="panel left">
               <div class="spaced-content">
                 <svg class="weather-icon" data-src="/images/weathericons/1.svg" viewBox="0 0 288 288" width="40" height="40"><g stroke="#FF8700" stroke-width="9.6" fill="none" fill-rule="evenodd"><path d="M144 0v48M144 240v48M0 144h48M211.872 76.128l33.936-33.936M245.808 245.808l-33.936-33.936M76.128 76.128 42.192 42.192"></path><circle cx="144" cy="144" r="76.8"></circle><path d="m76.128 211.872-33.936 33.936M240 144h48"></path></g></svg>
-                <div class="duration">
-                  <p class="duration-time">
-                    13 hrs
-                  </p>
-                  <p class="duration-time">
-                    39 mins
-                  </p>
-                </div>
               </div>
               <div class="spaced-content">
                 <span> Rise</span>
@@ -80,7 +70,7 @@
                 <span>Set</span>
                 <span id="set">19:14</span>
               </div>
-            </div>
+        </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="index.js"></script>
   </body>
